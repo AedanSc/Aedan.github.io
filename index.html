@@ -164,16 +164,95 @@
         .project-card {
             background: rgba(39, 39, 42, 0.5);
             border-radius: 12px;
-            padding: 2rem;
+            padding: 0;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
             cursor: pointer;
+            overflow: hidden;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
             border-color: #667eea;
             box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: zoom-in;
+            transition: transform 0.3s;
+        }
+
+        .project-image.placeholder {
+            font-size: 3rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            animation: zoomIn 0.3s;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .close-modal:hover {
+            color: #667eea;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
+        }
+
+        .project-content {
+            padding: 2rem;
         }
 
         .project-card h3 {
@@ -309,62 +388,84 @@
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <h3>Semi-Active Suspension System</h3>
-                <p>Researching a BAJA SAE suspension system with proportional solenoid valves using SolidWorks and MATLAB for modeling and damping-curve simulation.</p>
-                <div class="tags">
-                    <span class="tag">SolidWorks</span>
-                    <span class="tag">MATLAB</span>
-                    <span class="tag">Mechanical Design</span>
+                <div class="project-image">
+                    <img src="images/suspension-schematic.png" alt="Semi-Active Suspension Schematic" class="zoomable" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'; this.parentElement.innerHTML='🏎️';">
+                </div>
+                <div class="project-content">
+                    <h3>Semi-Active Suspension System</h3>
+                    <p>Researching a BAJA SAE suspension system with proportional solenoid valves using SolidWorks and MATLAB for modeling and damping-curve simulation.</p>
+                    <div class="tags">
+                        <span class="tag">SolidWorks</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">Mechanical Design</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card">
-                <h3>SEC Makeathon Winner</h3>
-                <p>Built a pencil dispenser with identification system using Arduino NANO and sensors in under 8 hours. Awarded Best Technical Design at UT's SEC 2025 Makeathon.</p>
-                <div class="tags">
-                    <span class="tag">Arduino</span>
-                    <span class="tag">Embedded Systems</span>
-                    <span class="tag">Rapid Prototyping</span>
+                <div class="project-image">✏️</div>
+                <div class="project-content">
+                    <h3>SEC Makeathon Winner</h3>
+                    <p>Built a pencil dispenser with identification system using Arduino NANO and sensors in under 8 hours. Awarded Best Technical Design at UT's SEC 2025 Makeathon.</p>
+                    <div class="tags">
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Embedded Systems</span>
+                        <span class="tag">Rapid Prototyping</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card">
-                <h3>Autonomous Maze-Solving Robot</h3>
-                <p>Designed robot with ESP-32 and high-torque servo projectile launcher for UT Robotathon. Awarded Best Design.</p>
-                <div class="tags">
-                    <span class="tag">ESP-32</span>
-                    <span class="tag">Robotics</span>
-                    <span class="tag">Autonomous Systems</span>
+                <div class="project-image">🤖</div>
+                <div class="project-content">
+                    <h3>Autonomous Maze-Solving Robot</h3>
+                    <p>Designed robot with ESP-32 and high-torque servo projectile launcher for UT Robotathon. Awarded Best Design.</p>
+                    <div class="tags">
+                        <span class="tag">ESP-32</span>
+                        <span class="tag">Robotics</span>
+                        <span class="tag">Autonomous Systems</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card">
-                <h3>Odor-Removing Laundry Hamper</h3>
-                <p>Prototype design integrating air filtration, dehumidification, and activated carbon to capture and eliminate VOCs from sweaty laundry.</p>
-                <div class="tags">
-                    <span class="tag">Product Design</span>
-                    <span class="tag">CAD</span>
-                    <span class="tag">Innovation</span>
+                <div class="project-image">👕</div>
+                <div class="project-content">
+                    <h3>Odor-Removing Laundry Hamper</h3>
+                    <p>Prototype design integrating air filtration, dehumidification, and activated carbon to capture and eliminate VOCs from sweaty laundry.</p>
+                    <div class="tags">
+                        <span class="tag">Product Design</span>
+                        <span class="tag">CAD</span>
+                        <span class="tag">Innovation</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card">
-                <h3>Weather App with API</h3>
-                <p>Built a functional weather application using Python and PyQt5, integrating real-time weather data through API calls.</p>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">PyQt5</span>
-                    <span class="tag">API Integration</span>
+                <div class="project-image">🌤️</div>
+                <div class="project-content">
+                    <h3>Weather App with API</h3>
+                    <p>Built a functional weather application using Python and PyQt5, integrating real-time weather data through API calls.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">PyQt5</span>
+                        <span class="tag">API Integration</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card">
-                <h3>NASA Aerospace Scholars</h3>
-                <p>Outperformed 20+ teams designing a living space within the Gateway space station for the 2024 NASA High School Aerospace Scholars Moonshot competition.</p>
-                <div class="tags">
-                    <span class="tag">Aerospace Design</span>
-                    <span class="tag">Team Leadership</span>
-                    <span class="tag">Research</span>
+                <div class="project-image">
+                    <img src="images/nasa-poster.png" alt="NASA Gateway HALO Poster" class="zoomable" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'; this.parentElement.innerHTML='🚀';">
+                </div>
+                <div class="project-content">
+                    <h3>NASA Aerospace Scholars - Gateway HALO</h3>
+                    <p>Led subtopic team designing crew health systems for NASA's Gateway HALO module. Developed solutions for radiation protection, nutrition, exercise, and mental health to sustain life in lunar orbit for 30+ days.</p>
+                    <div class="tags">
+                        <span class="tag">Aerospace Design</span>
+                        <span class="tag">Systems Engineering</span>
+                        <span class="tag">Team Leadership</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -439,6 +540,11 @@
         </div>
     </section>
 
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -462,6 +568,34 @@
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.6s ease-out';
             observer.observe(el);
+        });
+
+        // Image zoom functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.close-modal');
+
+        document.querySelectorAll('.zoomable').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.classList.add('active');
+                modalImg.src = this.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                modal.classList.remove('active');
+            }
         });
     </script>
 </body>
