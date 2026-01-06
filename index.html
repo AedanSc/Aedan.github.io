@@ -1,77 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aedan | Engineering Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
   <h1>Aedan</h1>
-  <p class="subtitle">Engineering Projects & Models</p>
+  <p class="subtitle">Mechanical & Systems Engineering Projects</p>
 </header>
 
-<section>
-  <h2>About</h2>
-  <p>
-    I’m a student interested in mechanical and systems engineering, with a focus
-    on understanding how components behave in real-world conditions. I enjoy
-    building small-scale models to explore actuation, control, and design trade-offs.
-  </p>
-</section>
-
-<section>
-  <h2>Projects</h2>
-
-  <div class="project">
-    <h3>Solenoid Valve — Design & Modeling</h3>
-    <p class="tools"><strong>Tools:</strong> CAD, basic electronics</p>
-
-    <p><strong>Problem:</strong><br>
-      Design a compact solenoid-actuated valve to understand electromagnetic
-      actuation and fluid control.
+<main>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a student passionate about mechanical and systems engineering,
+      focusing on the practical behavior of components and systems in real-world
+      conditions. I enjoy designing and building models to explore actuation,
+      control systems, and design trade-offs.
     </p>
+  </section>
 
-    <p><strong>Approach:</strong></p>
-    <ul>
-      <li>Modeled valve body and plunger assembly in CAD</li>
-      <li>Designed around alignment and tolerance constraints</li>
-      <li>Iterated plunger mass and coil assumptions</li>
-    </ul>
+  <section id="projects">
+    <h2>Selected Projects</h2>
 
-    <p><strong>Key Learnings:</strong></p>
-    <ul>
-      <li>Magnetic force vs. return spring trade-offs</li>
-      <li>Importance of friction and tolerances</li>
-      <li>Gap between ideal models and real behavior</li>
-    </ul>
+    <div class="project">
+      <h3>Solenoid Valve — Design & Modeling</h3>
+      <p class="tools"><strong>Tools:</strong> CAD, Basic Electronics</p>
 
-    <p><strong>If I rebuilt it:</strong><br>
-      I would improve sealing and plunger guidance to reduce losses.
-    </p>
+      <p><strong>Objective:</strong><br>
+        Develop a compact solenoid-actuated valve to study electromagnetic actuation and fluid control.
+      </p>
 
-    <img src="images/solenoid-valve.jpg" alt="Solenoid valve project image">
-  </div>
+      <p><strong>Methodology:</strong></p>
+      <ul>
+        <li>Modeled the valve body and plunger assembly using CAD software</li>
+        <li>Designed with alignment and tolerance considerations</li>
+        <li>Iteratively analyzed plunger mass and coil specifications</li>
+      </ul>
 
-  <!-- COPY THIS BLOCK TO ADD A NEW PROJECT -->
-  <!--
-  <div class="project">
-    <h3>Project Name</h3>
-    <p>Description...</p>
-  </div>
-  -->
+      <p><strong>Key Insights:</strong></p>
+      <ul>
+        <li>Trade-offs between magnetic force and return spring stiffness</li>
+        <li>Critical role of friction and dimensional tolerances</li>
+        <li>Discrepancy between theoretical models and real-world performance</li>
+      </ul>
 
-</section>
+      <p><strong>Next Iteration:</strong><br>
+        Improvements would include enhanced sealing and guided plunger movement to reduce mechanical losses.
+      </p>
 
-<section>
-  <h2>Contact</h2>
-  <p>Email: your.email@email.com</p>
-  <p>
-    <a href="resume.pdf" target="_blank">Resume (PDF)</a>
-  </p>
-</section>
+      <img src="images/solenoid-valve.jpg" alt="Solenoid valve project image">
+    </div>
+
+    <!-- Add new projects using the same structure -->
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your.email@email.com">your.email@email.com</a></p>
+    <p><a href="resume.pdf" target="_blank">Download Resume (PDF)</a></p>
+  </section>
+</main>
 
 <footer>
   <p>© 2026 Aedan</p>
