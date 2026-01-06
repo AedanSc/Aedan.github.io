@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Aedan Scaria - Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -201,56 +201,6 @@
             font-size: 3rem;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-            animation: fadeIn 0.3s;
-        }
-
-        .modal.active {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            max-width: 95%;
-            max-height: 95%;
-            object-fit: contain;
-            animation: zoomIn 0.3s;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 2001;
-        }
-
-        .close-modal:hover {
-            color: #667eea;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.8); }
-            to { transform: scale(1); }
-        }
-
         .project-content {
             padding: 2rem;
         }
@@ -330,6 +280,56 @@
             color: #667eea;
         }
 
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            animation: zoomIn 0.3s;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .close-modal:hover {
+            color: #667eea;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -403,7 +403,7 @@
             </div>
 
             <div class="project-card">
-                <div class="project-image">✏️</div>
+                <div class="project-image placeholder">✏️</div>
                 <div class="project-content">
                     <h3>SEC Makeathon Winner</h3>
                     <p>Built a pencil dispenser with identification system using Arduino NANO and sensors in under 8 hours. Awarded Best Technical Design at UT's SEC 2025 Makeathon.</p>
@@ -416,7 +416,7 @@
             </div>
 
             <div class="project-card">
-                <div class="project-image">🤖</div>
+                <div class="project-image placeholder">🤖</div>
                 <div class="project-content">
                     <h3>Autonomous Maze-Solving Robot</h3>
                     <p>Designed robot with ESP-32 and high-torque servo projectile launcher for UT Robotathon. Awarded Best Design.</p>
@@ -429,7 +429,7 @@
             </div>
 
             <div class="project-card">
-                <div class="project-image">👕</div>
+                <div class="project-image placeholder">👕</div>
                 <div class="project-content">
                     <h3>Odor-Removing Laundry Hamper</h3>
                     <p>Prototype design integrating air filtration, dehumidification, and activated carbon to capture and eliminate VOCs from sweaty laundry.</p>
@@ -442,7 +442,21 @@
             </div>
 
             <div class="project-card">
-                <div class="project-image">🌤️</div>
+                <div class="project-image placeholder">📄</div>
+                <div class="project-content">
+                    <h3>Dish Soap Research Paper</h3>
+                    <p>Wrote a 25-page research paper evaluating synthetic vs. sustainable dish soaps, analyzing detergency and antimicrobial efficacy using the Kirby-Bauer test methodology.</p>
+                    <div class="tags">
+                        <span class="tag">Research</span>
+                        <span class="tag">Laboratory Testing</span>
+                        <span class="tag">Technical Writing</span>
+                    </div>
+                    <a href="documents/dish-soap-research.pdf" target="_blank" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">View Paper</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image placeholder">🌤️</div>
                 <div class="project-content">
                     <h3>Weather App with API</h3>
                     <p>Built a functional weather application using Python and PyQt5, integrating real-time weather data through API calls.</p>
